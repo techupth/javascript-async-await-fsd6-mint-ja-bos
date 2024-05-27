@@ -11,4 +11,17 @@ let getJohnProfile = () => {
     );
   });
 };
+
+/* ให้นำ Function getJohnProfile จากโจทย์ Exercise #2 มาเขียนใหม่ด้วยวิธี Async / Await
+ให้แสดงผลข้อมูลที่ Reject จาก Promise ที่ Return มาจาก Function getJohnProfile ด้วย console.log() */
 // Start coding here
+async function johnProfile() {
+  try {
+    const profile = await getJohnProfile();
+    console.log(profile);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+johnProfile();

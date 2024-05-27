@@ -32,4 +32,15 @@ let getJohnOrders = () => {
   });
 };
 
+/* กำหนดให้ลำดับการทำงานต้องเป็นดังนี้
+getJohnProfile จะต้องถูก Execute ก่อน
+ให้แสดงผลตัวข้อมูลที่ได้จาก Function getJohnProfile ด้วย console.log()
+getJohnOrders จะต้องถูก Execute ถัดมา
+ให้แสดงผลตัวข้อมูลที่ได้จาก Function getJohnOrders ด้วย console.log() */
 // Start coding here
+getJohnProfile()
+  .then((profile) => {
+    console.log(profile);
+    return getJohnOrders();
+  })
+  .then((orders) => console.log(orders));

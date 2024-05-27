@@ -12,4 +12,8 @@ let getJohnProfile = () => {
   });
 };
 
+/* ให้แสดงผลข้อมูลที่ Reject จาก Promise ที่ Return มาจาก Function getJohnProfile ด้วยวิธี Promise Property ปกติ ด้วย console.log() */
 // Start coding here
+getJohnProfile().catch((error) => {
+  console.log(error);
+});

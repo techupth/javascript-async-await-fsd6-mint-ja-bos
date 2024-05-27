@@ -32,4 +32,22 @@ let getJohnOrders = () => {
   });
 };
 
+/* ให้เรียงลำดับการทำงานของ Asynchronous Operation จาก Function ในโจทย์ข้างต้น ด้วยวิธี Async / Await
+กำหนดให้ลำดับการทำงานต้องเป็นดังนี้
+getJohnProfile จะต้องถูก Execute ก่อน
+ให้ Log ตัวข้อมูลที่ได้จาก Function getJohnProfile
+getJohnOrders จะต้องถูก Execute ถัดมา
+ให้ Log ตัวข้อมูลที่ได้จาก Function getJohnOrders */
 // Start coding here
+async function johnProfile() {
+  try {
+    const profile = await getJohnProfile();
+    console.log(profile);
+    const orders = await getJohnOrders();
+    console.log(orders);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+johnProfile();
