@@ -34,5 +34,12 @@ let getJohnOrders = () => {
 
 // Start coding here
 
-getJohnProfile().then((data) => console.log(data));
-getJohnOrders().then((data) => console.log(data));
+function displayRecieved(data) {
+  console.log(data);
+}
+
+getJohnProfile()
+  .then(displayRecieved)
+  .then(getJohnOrders)
+  .then(displayRecieved)
+  .catch(displayRecieved);

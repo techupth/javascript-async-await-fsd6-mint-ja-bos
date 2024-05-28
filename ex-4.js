@@ -13,5 +13,10 @@ let getJohnProfile = async () => {
   });
 };
 // Start coding here
-const johnProfile = await getJohnProfile();
-console.log(johnProfile);
+
+async function asynconousFunction() {
+  const johnProfile = await getJohnProfile();
+  console.log(johnProfile);
+}
+
+asynconousFunction();
